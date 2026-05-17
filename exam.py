@@ -74,10 +74,10 @@ from scripts.bio5_microbiology.growth import (
 
 # ---- diffusion ----
 # print("D  =", stokes_einstein_D(R=2e-9, T=T_room, eta=eta_water_25C))   # R[m] T[K] eta[Pa*s] -> [m^2/s]
-# print("x  =", diffusion_distance(D=1e-10, t=1))                         # D[m^2/s] t[s] -> [m]
-# print("t  =", diffusion_time(x=10e-6, D=1e-10))                         # x[m] D[m^2/s] -> [s]
-# print("D  =", D_from_trajectory(x=5e-6, t=1))                           # x[m] t[s] -> D[m^2/s]
-# print("R  =", R_from_D(D=1e-10, T=T_room, eta=eta_water_25C))           # D[m^2/s] -> R[m]
+# print("x  =", diffusion_distance(D=1e-10, t=1, dim=1))                  # D[m^2/s] t[s] dim=1/2/3 -> [m]
+# print("t  =", diffusion_time(x=10e-6, D=1e-10, dim=1))                  # x[m] D[m^2/s] dim=1/2/3 -> [s]
+print("D  =", D_from_trajectory(x=6e-6, t=20, dim=2))                    # x[m] t[s] dim=1/2/3 -> D[m^2/s]
+print("R  =", R_from_D(D=9.000000000000001e-13, T=T_room, eta=eta_water_25C))           # D[m^2/s] -> R[m]
 # print("D2 =", scale_D(D1=1e-10, R1=2e-9, R2=4e-9, eta1=eta_water_25C, eta2=eta_water_25C, T1=T_room, T2=T_room))
 # print("S  =", boltzmann_entropy(Omega=928))                             # microstates -> [J/K]
 
@@ -94,13 +94,13 @@ from scripts.bio5_microbiology.growth import (
 # print("Re =", reynolds(rho=1000, u=0.01, L=1e-3, eta=eta_water_25C))             # dimensionless
 
 # ---- membrane / cell ----
-print("A  =", sphere_area(R=10e-6))                                     # R[m] -> [m^2]
-print("V  =", sphere_volume(R=10e-6))                                   # R[m] -> [m^3]
-print("C  =", capacitance(A=1.26e-9, d=membrane_thickness, eps_r=eps_membrane))  # [F]
-print("Q  =", capacitor_charge(C=1e-11, V=0.07))                        # [C]
-print("E  =", capacitor_energy(C=1e-11, V=0.07))                        # [J]
-print("N  =", n_charges(Q=1e-12))                                       # count of e
-print("N  =", n_ions_in_cell(c_M=0.14, V_m3=4.19e-15))                  # ions in cell
+# print("A  =", sphere_area(R=10e-6))                                     # R[m] -> [m^2]
+# print("V  =", sphere_volume(R=10e-6))                                   # R[m] -> [m^3]
+# print("C  =", capacitance(A=1.26e-9, d=membrane_thickness, eps_r=eps_membrane))  # [F]
+# print("Q  =", capacitor_charge(C=1e-11, V=0.07))                        # [C]
+# print("E  =", capacitor_energy(C=1e-11, V=0.07))                        # [J]
+# print("N  =", n_charges(Q=1e-12))                                       # count of e
+# print("N  =", n_ions_in_cell(c_M=0.14, V_m3=4.19e-15))                  # ions in cell
 
 # ---- energy ----
 # print(atp_per_day(kcal_per_day=2000, fraction_to_atp=0.40))             # -> (mol, g)

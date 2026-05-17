@@ -1,6 +1,2 @@
-def main():
-    print("Hello from bio-python-repo!")
+from scripts.bio1_physical.diffusion import stokes_einstein_D
 
-
-if __name__ == "__main__":
-    main()
