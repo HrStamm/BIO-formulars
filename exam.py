@@ -73,16 +73,16 @@ from scripts.bio5_microbiology.growth import (
 # ===================================================================
 
 # ---- diffusion ----
-# print("D  =", stokes_einstein_D(R=2e-9, T=T_room, eta=eta_water_25C))   # R[m] T[K] eta[Pa*s] -> [m^2/s]
+# print("D  =", stokes_einstein_D(R=2e-6, T=T_room, eta=eta_water_25C))   # R[m] T[K] eta[Pa*s] -> [m^2/s]
 # print("x  =", diffusion_distance(D=1e-10, t=1, dim=1))                  # D[m^2/s] t[s] dim=1/2/3 -> [m]
 # print("t  =", diffusion_time(x=10e-6, D=1e-10, dim=1))                  # x[m] D[m^2/s] dim=1/2/3 -> [s]
-print("D  =", D_from_trajectory(x=6e-6, t=20, dim=2))                    # x[m] t[s] dim=1/2/3 -> D[m^2/s]
-print("R  =", R_from_D(D=9.000000000000001e-13, T=T_room, eta=eta_water_25C))           # D[m^2/s] -> R[m]
+# print("D  =", D_from_trajectory(x=6e-6, t=20, dim=2))                    # x[m] t[s] dim=1/2/3 -> D[m^2/s]
+# print("R  =", R_from_D(D=4.5000000000000005e-13, T=T_room, eta=eta_water_25C))           # D[m^2/s] -> R[m]
 # print("D2 =", scale_D(D1=1e-10, R1=2e-9, R2=4e-9, eta1=eta_water_25C, eta2=eta_water_25C, T1=T_room, T2=T_room))
 # print("S  =", boltzmann_entropy(Omega=928))                             # microstates -> [J/K]
 
 # ---- osmosis ----
-# print("Pi =", osmotic_pressure(c_M=0.15, i=2, T=T_room))                # c[mol/L] i[vant Hoff] -> [Pa]
+print("Pi =", osmotic_pressure(c_M=1, i=2, T=T_room))                # c[mol/L] i[vant Hoff] -> [Pa]
 # print("osm=", effective_osmolarity(c_M=0.1, solute="NaCl"))             # -> [Osm/L]
 # print(rank_osmotic([("A", 0.1, "NaCl"), ("B", 0.1, "glucose"), ("C", 0.05, "CaCl2")]))
 # print(VANT_HOFF)                                                         # lookup table
